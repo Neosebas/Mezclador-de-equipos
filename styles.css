@@ -1,0 +1,164 @@
+/* styles.css */
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales */
+body {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: rgb(106,106,106);
+    background: rgb(0,219,126);
+    background: linear-gradient(180deg, 
+        rgba(0,219,126,0.8800770308123249) 0%, 
+        rgba(106,106,106,1) 100%);
+    padding: 10px; /* Espaciado reducido en mobile */
+}
+
+.contenedor {
+    margin: 0 auto;
+    padding: 15px; /* Espaciado más pequeño en móviles */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.team {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem; /* Tamaños de fuente más pequeños en mobile */
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+
+textarea, select {
+    width: 100%;
+    padding: 8px; /* Espaciado reducido */
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem; /* Texto más pequeño para móvil */
+}
+.label-select{
+    font-weight: bold;
+}
+
+.forms{
+    display: flex;
+    gap: 5px;
+    margin: 15px 0;
+    justify-content: center;
+}
+.forms input {
+    max-width: 60px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: rgb(219,0,203);
+    background: linear-gradient(90deg, 
+        rgba(219,0,203,1) 0%, 
+        rgba(172,44,235,1) 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem; /* Botón un poco más grande pero accesible */
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#resultadoEquipos {
+    margin-top: 20px;
+}
+
+#equiposGenerados {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Menor espacio entre los equipos */
+}
+
+.equipo {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1rem; /* Ajustado para pantalla pequeña */
+}
+
+/* Media Queries para pantallas más grandes */
+
+/* Tablets y más grandes */
+@media (min-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .contenedor {
+        max-width: 600px;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 2rem; /* Aumentar el tamaño de la fuente */
+    }
+
+    textarea, select {
+        padding: 12px; /* Más espacio */
+        margin: 12px 0;
+    }
+
+    button {
+        font-size: 1.5rem; /* Botón más grande en pantallas más amplias */
+    }
+
+    #equiposGenerados {
+        gap: 20px; /* Aumentar espacio entre equipos */
+    }
+
+    .equipo {
+        font-size: 1.2rem; /* Fuente más grande en pantallas grandes */
+    }
+}
+
+/* Desktops y monitores grandes */
+@media (min-width: 1024px) {
+    .contenedor {
+        max-width: 800px; /* Ajuste del contenedor */
+    }
+
+    h1, h2 {
+        font-size: 2.5rem; /* Fuente más grande */
+    }
+
+    textarea, select {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 1.8rem; /* Aumentar aún más el tamaño del botón */
+    }
+
+    .equipo {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mezclador de Equipos de Fútbol</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+    <h1>Mezclador de Equipos BARFY / ROSA</h1>
+
+    <!-- Campo para ingresar jugadores -->
+    <label for="players">Ingresa los jugadores (uno por línea o separados por comas):</label>
+    <textarea id="players" rows="5" cols="30"></textarea>
+
+    <!-- Selección de número de equipos -->
+    <div class="forms">
+        <label for="teamNumber" class="label-select">Cantidad de equipos:</label>
+        <input type="number" id="teamNumber" min="1" value="2">
+    </div>
+
+
+    <!-- Selección de tamaño de los equipos -->
+    <div class="forms">
+        <label for="teamSize" class="label-select">Tamaño del equipo :</label>
+        <input type="number" id="teamSize" min="5" max="11" value="5">
+    </div>
+
+    <!-- Botón para generar equipos -->
+    <button id="generateTeams">Generar Equipos</button>
+
+    <!-- Contenedor donde se mostrarán los equipos generados -->
+    <div id="teamsContainer"></div>
+
+    <script src="app.js"></script> <!-- Enlace al archivo JS -->
+</body>
+</html>
