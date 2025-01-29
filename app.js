@@ -46,7 +46,24 @@ function displayTeams(teams) {
     teams.forEach((team, index) => {
         const teamElement = document.createElement('div');
         teamElement.classList.add('team');
-        teamElement.innerHTML = `<h3>Equipo ${index + 1}</h3><p>${team.join(', ')}</p>`;
+
+        // Agregar título del equipo
+        const title = document.createElement('h3');
+        title.textContent = `Equipo ${index + 1}`;
+        teamElement.appendChild(title);
+
+        // Agregar lista de jugadores
+        const teamList = document.createElement('p');
+        teamList.textContent = team.join(', ');
+        teamElement.appendChild(teamList);
+
+        // Agregar imagen aleatoria
+        const image = document.createElement('img');
+        image.src = `img/team${index + 1}.jpg`; // Cambia según el nombre real de tus imágenes
+        image.alt = `Imagen del Equipo ${index + 1}`;
+        image.classList.add('team-image');
+        teamElement.appendChild(image);
+
         teamsContainer.appendChild(teamElement);
     });
 }
