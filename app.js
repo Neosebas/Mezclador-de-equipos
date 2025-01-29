@@ -43,6 +43,15 @@ function displayTeams(teams) {
     const teamsContainer = document.getElementById('teamsContainer');
     teamsContainer.innerHTML = '';
 
+    // Lista de imágenes disponibles
+    const imagePaths = [
+        'img/team1.jpg',
+        'img/team2.jpg'
+    ];
+
+    // Mezclar aleatoriamente la lista de imágenes
+    shuffle(imagePaths);
+
     teams.forEach((team, index) => {
         const teamElement = document.createElement('div');
         teamElement.classList.add('team');
@@ -57,12 +66,14 @@ function displayTeams(teams) {
         teamList.textContent = team.join(', ');
         teamElement.appendChild(teamList);
 
-        // Agregar imagen aleatoria
-        const image = document.createElement('img');
-        image.src = `img/team${index + 1}.jpg`; // Cambia según el nombre real de tus imágenes
-        image.alt = `Imagen del Equipo ${index + 1}`;
-        image.classList.add('team-image');
-        teamElement.appendChild(image);
+        // Asignar imagen aleatoria desde la lista mezclada
+        if (imagePaths.length > 0) {
+            const image = document.createElement('img');
+            image.src = imagePaths.pop(); // Toma y elimina la última imagen del array
+            image.alt = `Imagen del Equipo ${index + 1}`;
+            image.classList.add('team-image');
+            teamElement.appendChild(image);
+        }
 
         teamsContainer.appendChild(teamElement);
     });
