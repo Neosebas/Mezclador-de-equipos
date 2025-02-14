@@ -45,8 +45,8 @@ function displayTeams(teams) {
 
     // Lista de imágenes disponibles
     const imagePaths = [
-        'img/team1.jpg',
-        'img/team2.jpg'
+        'img/team1.webp',
+        'img/team2.webp'
     ];
 
     // Mezclar aleatoriamente la lista de imágenes
