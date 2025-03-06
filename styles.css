@@ -50,7 +50,8 @@ h3 {
     text-shadow: 2px 2px 3px #000;
 }
 p {
-    color: #ff0400;
+    color: #ffffff;
+    -webkit-text-stroke: .5px #000000;
     font-weight: bold;
     text-shadow: 2px 2px 3px #000;
 }
