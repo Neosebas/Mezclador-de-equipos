@@ -4,34 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mezclador de Equipos de Fútbol</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
+        if (!usuario) {
+            alert("Debés iniciar sesión para acceder.");
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 <body>
-    <h1>Mezclador de Equipos BARFY / ROSA</h1>
 
-    <!-- Campo para ingresar jugadores -->
-    <label for="players">Ingresa los jugadores (uno por línea o separados por comas):</label>
-    <textarea id="players" rows="5" cols="30"></textarea>
+    <main class="contenedor">
+        <h1>Mezclador de Equipos BARFY / ROSA</h1>
 
-    <!-- Selección de número de equipos -->
-    <div class="forms">
-        <label for="teamNumber" class="label-select">Cantidad de equipos:</label>
-        <input type="number" id="teamNumber" min="1" value="2">
-    </div>
+        <!-- Sección: Agregar Jugadores -->
+        <section id="form-jugadores">
+            <h2>Agregar jugador</h2>
+            <form id="formJugador">
+                <input type="text" id="nombreJugador" placeholder="Nombre del jugador" required>
+                <select id="nivelJugador">
+                    <option value="1">Nivel 1 - Principiante</option>
+                    <option value="2">Nivel 2</option>
+                    <option value="3">Nivel 3 - Promedio</option>
+                    <option value="4">Nivel 4</option>
+                    <option value="5">Nivel 5 - Avanzado</option>
+                </select>
+                <button type="submit">Agregar</button>
+            </form>
+            <ul id="listaJugadores"></ul>
+        </section>
 
+        <!-- Sección: Configurar Equipos -->
+        <section>
+            <h2>Configurar sorteo</h2>
 
-    <!-- Selección de tamaño de los equipos -->
-    <div class="forms">
-        <label for="teamSize" class="label-select">Tamaño del equipo :</label>
-        <input type="number" id="teamSize" min="5" max="11" value="5">
-    </div>
+            <div class="forms">
+                <label for="teamNumber" class="label-select">Cantidad de equipos:</label>
+                <input type="number" id="teamNumber" min="1" value="2">
+            </div>
 
-    <!-- Botón para generar equipos -->
-    <button id="generateTeams">Generar Equipos</button>
+            <div class="forms">
+                <label for="teamSize" class="label-select">Tamaño del equipo:</label>
+                <input type="number" id="teamSize" min="1" max="11" value="5">
+            </div>
 
-    <!-- Contenedor donde se mostrarán los equipos generados -->
-    <div id="teamsContainer"></div>
+            <button id="generateTeams">Generar Equipos</button>
+        </section>
 
-    <script src="app.js"></script> <!-- Enlace al archivo JS -->
+        <!-- Sección: Resultados -->
+        <section id="resultadoEquipos">
+            <h2>Equipos generados</h2>
+            <div id="teamsContainer"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
 </body>
 </html>
